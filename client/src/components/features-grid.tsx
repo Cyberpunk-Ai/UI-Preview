@@ -103,17 +103,17 @@ export default function FeaturesGrid() {
               />
               
               {/* Enhanced Glassmorphism Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t ${feature.gradientClass} group-hover:opacity-90 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-gradient-to-t ${feature.gradientClass} group-hover:opacity-30 transition-opacity duration-500`} />
               
               {/* Animated Border */}
               <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-white/30 transition-colors duration-500" />
               
-              {/* Content Overlay with Enhanced Animation */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 glassmorphism-dark rounded-b-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h3 className="text-2xl font-bold text-white mb-2 leading-tight group-hover:scale-105 transition-transform duration-300">
+              {/* Content Overlay with Hide on Hover Animation */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 glassmorphism-dark rounded-b-2xl transform translate-y-0 group-hover:translate-y-full transition-transform duration-500">
+                <h3 className="text-2xl font-bold text-white mb-2 leading-tight">
                   {feature.title}
                 </h3>
-                <p className="text-gray-200 text-lg leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-gray-200 text-lg leading-relaxed opacity-90">
                   {feature.description}
                 </p>
               </div>
