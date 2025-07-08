@@ -1,5 +1,4 @@
 import Navigation from "@/components/navigation";
-import HeroSection from "@/components/hero-section";
 import FeaturesGrid from "@/components/features-grid";
 
 export default function Home() {
@@ -7,7 +6,6 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <HeroSection />
         <FeaturesGrid />
       </main>
     </div>
