@@ -87,35 +87,61 @@ export default function FeaturesGrid() {
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:scale-105 aspect-[4/3] cursor-pointer ${
+              className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:scale-110 aspect-[4/3] cursor-pointer ${
                 index % 2 === 0 ? 'lg:mt-8' : 'lg:-mt-4'
               } ${feature.rotationClass}`}
               style={{
                 transform: `${index % 3 === 0 ? 'rotate(-3deg)' : index % 3 === 1 ? 'rotate(2deg)' : 'rotate(-1deg)'}`,
               }}
             >
-              {/* Screenshot Background */}
+              {/* Screenshot Background with Enhanced Visibility */}
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 bg-cover bg-center screenshot-reveal transition-all duration-700 group-hover:scale-105"
                 style={{
                   backgroundImage: `url('${feature.screenshot}')`
                 }}
               />
               
-              {/* Enhanced Glassmorphism Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t ${feature.gradientClass} group-hover:opacity-90 transition-opacity duration-500`} />
+              {/* Screenshot Preview Overlay on Hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none">
+                <div className="absolute inset-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <svg className="w-8 h-8 mx-auto mb-2 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <p className="text-sm font-medium">View Platform</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Enhanced Glassmorphism Overlay - Dramatically reduces on hover */}
+              <div className={`absolute inset-0 bg-gradient-to-t ${feature.gradientClass} group-hover:opacity-10 transition-opacity duration-700`} />
               
               {/* Animated Border */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-white/30 transition-colors duration-500" />
+              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-white/70 group-hover:shadow-lg transition-all duration-500" />
               
-              {/* Content Overlay with Enhanced Animation */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 glassmorphism-dark rounded-b-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h3 className="text-2xl font-bold text-white mb-2 leading-tight group-hover:scale-105 transition-transform duration-300">
+              {/* Screenshot Overlay Effect - Completely removes dark overlay on hover */}
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/5 transition-colors duration-700" />
+              
+              {/* Screenshot Enhancement Filter */}
+              <div className="absolute inset-0 group-hover:bg-white/5 transition-colors duration-700" />
+              
+              {/* Content Overlay with Enhanced Animation - Becomes more prominent on hover */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 glassmorphism-dark rounded-b-2xl transform translate-y-0 group-hover:-translate-y-1 group-hover:bg-black/60 transition-all duration-500">
+                <h3 className="text-2xl font-bold text-white mb-2 leading-tight group-hover:scale-105 group-hover:text-white transition-all duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-200 text-lg leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-gray-200 text-lg leading-relaxed opacity-90 group-hover:opacity-100 group-hover:text-white transition-all duration-300">
                   {feature.description}
                 </p>
+              </div>
+              
+              {/* Screenshot Visibility Indicator */}
+              <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium border border-white/30">
+                  Live Platform
+                </div>
               </div>
               
               {/* Enhanced Hover Effect Indicator */}
