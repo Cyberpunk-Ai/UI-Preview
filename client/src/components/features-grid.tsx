@@ -1,4 +1,10 @@
 import { Card } from "@/components/ui/card";
+import dealerToolsImg from "@assets/Screenshot (195)_1751980724235.png";
+import customerTrustImg from "@assets/Screenshot (196)_1751980724235.png";
+import vehicleSearchImg from "@assets/Screenshot (194)_1751980724234.png";
+import vehicleDetailsImg from "@assets/Screenshot (198)_1751980724236.png";
+import creditsSystemImg from "@assets/Screenshot (200)_1751980724236.png";
+import rewardsRedemptionImg from "@assets/Screenshot (201)_1751980724236.png";
 
 interface FeatureCard {
   id: string;
@@ -14,7 +20,7 @@ const features: FeatureCard[] = [
     id: "dealer-tools",
     title: "Comprehensive Dealer Tools",
     description: "Streamline operations with powerful inventory management and sales platform",
-    screenshot: "/api/placeholder/400/300",
+    screenshot: dealerToolsImg,
     gradientClass: "from-gray-900/80 via-gray-900/40 to-transparent",
     rotationClass: "hover:rotate-slight-left"
   },
@@ -22,7 +28,7 @@ const features: FeatureCard[] = [
     id: "customer-trust",
     title: "Build Customer Trust",
     description: "Verified dealers and quality assurance for customer confidence",
-    screenshot: "/api/placeholder/400/300",
+    screenshot: customerTrustImg,
     gradientClass: "from-green-600/80 via-green-600/40 to-transparent",
     rotationClass: "hover:rotate-slight-right"
   },
@@ -30,7 +36,7 @@ const features: FeatureCard[] = [
     id: "vehicle-marketplace",
     title: "Advanced Vehicle Search",
     description: "Powerful filters and browsing tools for finding the perfect vehicle",
-    screenshot: "/api/placeholder/400/300",
+    screenshot: vehicleSearchImg,
     gradientClass: "from-orange-600/80 via-orange-600/40 to-transparent",
     rotationClass: "hover:rotate-moderate-left"
   },
@@ -38,7 +44,7 @@ const features: FeatureCard[] = [
     id: "vehicle-details",
     title: "Rich Vehicle Profiles",
     description: "Comprehensive listings with photos, specs, and dealer information",
-    screenshot: "/api/placeholder/400/300",
+    screenshot: vehicleDetailsImg,
     gradientClass: "from-blue-600/80 via-blue-600/40 to-transparent",
     rotationClass: "hover:rotate-slight-left"
   },
@@ -46,7 +52,7 @@ const features: FeatureCard[] = [
     id: "credits-system",
     title: "Innovative Credits System",
     description: "Premium rewards ecosystem for luxury purchases and experiences",
-    screenshot: "/api/placeholder/400/300",
+    screenshot: creditsSystemImg,
     gradientClass: "from-purple-600/80 via-purple-600/40 to-transparent",
     rotationClass: "hover:rotate-moderate-right"
   },
@@ -54,7 +60,7 @@ const features: FeatureCard[] = [
     id: "rewards-redemption",
     title: "Exclusive Redemption Portal",
     description: "Unlock deals across luxury, travel, and lifestyle experiences",
-    screenshot: "/api/placeholder/400/300",
+    screenshot: rewardsRedemptionImg,
     gradientClass: "from-emerald-600/80 via-emerald-600/40 to-transparent",
     rotationClass: "hover:rotate-slight-right"
   }
@@ -89,25 +95,7 @@ export default function FeaturesGrid() {
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                 style={{
-                  backgroundImage: `url('data:image/svg+xml;base64,${btoa(`
-                    <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="400" height="300" fill="#F3F4F6"/>
-                      <rect x="20" y="20" width="360" height="40" fill="#4F46E5" rx="8"/>
-                      <rect x="40" y="35" width="80" height="10" fill="white" rx="2"/>
-                      <rect x="320" y="30" width="40" height="20" fill="white" rx="4"/>
-                      <rect x="20" y="80" width="170" height="200" fill="white" rx="8"/>
-                      <rect x="40" y="100" width="130" height="8" fill="#E5E7EB" rx="2"/>
-                      <rect x="40" y="120" width="100" height="6" fill="#D1D5DB" rx="2"/>
-                      <rect x="40" y="140" width="120" height="80" fill="#F3F4F6" rx="4"/>
-                      <rect x="40" y="235" width="80" height="25" fill="#4F46E5" rx="4"/>
-                      <rect x="210" y="80" width="170" height="200" fill="white" rx="8"/>
-                      <rect x="230" y="100" width="130" height="8" fill="#E5E7EB" rx="2"/>
-                      <rect x="230" y="120" width="100" height="6" fill="#D1D5DB" rx="2"/>
-                      <rect x="230" y="140" width="120" height="80" fill="#F3F4F6" rx="4"/>
-                      <rect x="230" y="235" width="80" height="25" fill="#10B981" rx="4"/>
-                      <text x="200" y="290" text-anchor="middle" fill="#6B7280" font-family="Arial" font-size="12">${feature.title}</text>
-                    </svg>
-                  `)}')`
+                  backgroundImage: `url('${feature.screenshot}')`
                 }}
               />
               
